@@ -3,8 +3,8 @@ CSC 431 group creating card game battle royale
 
 # Set-up Local version of Project
 1. Get added as an official collaborator of the project via email
-2. Create Github Account https://github.com/join
-3. Install GitHub Desktop https://central.github.com/deployments/desktop/desktop/latest/win32
+2. Create Github Account [Join GitHub](https://github.com/join)
+3. Install GitHub Desktop [GitHub Desktop](https://central.github.com/deployments/desktop/desktop/latest/win32)
 4. After signing into GitHub Desktop, clone repository: 
 
    *File ==> Clone Repository ==> GitHub.com ==> click 'user/CardGameBR'*
@@ -14,17 +14,15 @@ CSC 431 group creating card game battle royale
    **RECOMMENDATION** Create a file called GitHub under one of your drives and save that as your local path. For example, my path for github repos is under my z drive 'Z:\GitHub'
  
 5. Then click 'Fetch Origin' at the top taskbar (this updates you with the latest version from github.com)
-6. Create a Unity Account https://id.unity.com/en/account/new
-7. Install Unity Hub https://public-cdn.cloud.unity3d.com/hub/prod/UnityHubSetup.exe
+6. Create a Unity Account [Join Unity](https://id.unity.com/en/account/new)
+7. Install Unity Hub [Unity Hub](https://public-cdn.cloud.unity3d.com/hub/prod/UnityHubSetup.exe)
 8. Set-up Unity Personal License
 
    *Settings ==> License Management ==> Activate New License ==> Unity Personal*
    
 9. Install Unity version 2019.2.15 on the Hub by 
 
-- *A1* copy-pasting this into the address bar: unityhub://2019.2.15f1/dcb72c2e9334
-
-- *A2* locating v2019.2.15 here: https://unity3d.com/get-unity/download/archive 
+- *A1* locating v2019.2.15 on the Unity archive: [Unity Archive](https://unity3d.com/get-unity/download/archive)
 
 - *B* click 'WebGL Build Support', then 'Done'
 
