@@ -2,8 +2,8 @@
 CSC 431 group creating card game battle royale
 
 # Set-up Local version of Project
-1. Get added as an official collaborator of the project via email
-2. Create Github Account [Join GitHub](https://github.com/join)
+1. Create Github Account [Join GitHub](https://github.com/join)
+2. Get added as an official collaborator of the project via email
 3. Install GitHub Desktop [GitHub Desktop](https://central.github.com/deployments/desktop/desktop/latest/win32)
 4. After signing into GitHub Desktop, clone repository: 
 
@@ -22,7 +22,7 @@ CSC 431 group creating card game battle royale
    
 9. Install Unity version 2019.2.15 on the Hub by 
 
-- *A1* locating v2019.2.15 on the Unity archive: [Unity Archive](https://unity3d.com/get-unity/download/archive)
+- *A* locating v2019.2.15 on the Unity archive: [Unity Archive](https://unity3d.com/get-unity/download/archive)
 
 - *B* click 'WebGL Build Support', then 'Done'
 
@@ -30,7 +30,7 @@ CSC 431 group creating card game battle royale
 
 - *A1* Go to the Projects tab on the Unity Hub
 
-- *A2* Click 'Add', then locate the folder you saved the github repo in step 4 in
+- *B* Click 'Add', then locate the folder you saved the github repo in (step 4)
 
    **EXAMPLE** I have my github desktop folder under my z drive, so the path to the Unity project is: 'Z:\GitHub\CardGameBR'
    
