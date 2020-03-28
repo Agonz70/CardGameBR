@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameStateHandler : ScriptableObject
 {
 
-    public State currentState { get; set; }
+    public State currentState { get; private set; }
     //public State savedState { get; set; }
 
     [SerializeField] private State Main;
@@ -26,7 +26,6 @@ public class GameStateHandler : ScriptableObject
         currentState = Main;
         //savedState = MoveObjectState;
     }
-
 
     public void SetState(State _state)
     {
