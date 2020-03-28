@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 
     [Header("State Setup")]
     [SerializeField] private GameStateHandler stateHandler;
+    [SerializeField] private PlayerStateHandler playerTurnHandler;
     [SerializeField] private State Main;
     [SerializeField] private State CardSelect;
     [SerializeField] private State Movement;
@@ -18,6 +19,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private State HandPick;
     [SerializeField] private State EndTurn;
     [SerializeField] private State Fusion;
+
+    public int playerID;
+    private int currentPlayerTurnID;
 
     void Start()
     {
@@ -37,6 +41,8 @@ public class GameManager : MonoBehaviour
         CombattingState();
         FusionState();
         EndTurnState();
+
+        currentPlayerTurnID = playerTurnHandler.currentPlayerTurnID;
     }
 
     void MainState()
@@ -47,6 +53,9 @@ public class GameManager : MonoBehaviour
 
     void EnemyMainState()
     {
+        //set turn to next player
+        //playerTurnHandler.NextPlayerTurn();
+
         //EnemyMain ==>
         //SummonState() OR MovementState() OR EndTurnState()
     }
@@ -87,5 +96,10 @@ public class GameManager : MonoBehaviour
     void EndTurnState()
     {
         //End Turn ==> EnemyMainState()
+    }
+
+    private bool PlayerTurn()
+    {
+        return (playerID == currentPlayerTurnID);
     }
 }
