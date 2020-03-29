@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "StateMachine/StateHandlers/PlayerStateHandler")]
-public class PlayerStateHandler : ScriptableObject
+[CreateAssetMenu(menuName = "StateMachine/Data/PlayerData")]
+public class PlayerData : ScriptableObject
 {
 
     public int currentPlayerTurnID { get; private set; }

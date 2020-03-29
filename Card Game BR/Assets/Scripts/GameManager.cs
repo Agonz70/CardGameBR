@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 
     [Header("State Setup")]
     [SerializeField] private GameStateHandler stateHandler;
-    [SerializeField] private PlayerStateHandler playerTurnHandler;
+    [SerializeField] private PlayerData playerData;
     [SerializeField] private State Main;
     [SerializeField] private State CardSelect;
     [SerializeField] private State Movement;
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         FusionState();
         EndTurnState();
 
-        currentPlayerTurnID = playerTurnHandler.currentPlayerTurnID;
+        currentPlayerTurnID = playerData.currentPlayerTurnID;
     }
 
     void MainState()
