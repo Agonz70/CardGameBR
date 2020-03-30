@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
     }
 
     void CardSelectState()
-    {
+    {       
         //Card Select ==> MovementState()
     }
  
