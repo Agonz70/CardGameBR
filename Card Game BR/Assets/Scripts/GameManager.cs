@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         FusionState();
         EndTurnState();
 
-        currentPlayerTurnID = playerData.currentPlayerTurnID;
+        //currentPlayerTurnID = playerData.currentPlayerTurnID;
     }
 
     void MainState()
