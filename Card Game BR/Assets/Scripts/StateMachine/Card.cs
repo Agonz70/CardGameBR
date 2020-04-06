@@ -8,10 +8,10 @@ using UnityEngine;
 
 public class Card : MonoBehaviour
 {
-  private int attack_stat {get; };
-  private int defense_stat {get; };
-  private int mana_required {get; };
-  private String type {get; };
-  private String unit_type {get; };
+  public int attack_stat { get; }
+  public int defense_stat {get; }
+  private int mana_required {get; }
+  private string type {get; }
+  private string unit_type {get; }
 
 }

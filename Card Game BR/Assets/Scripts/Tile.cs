@@ -29,5 +29,10 @@ public class Tile : MonoBehaviour
         return tile;
     }
 
+    public void SetType(int _type)
+    {
+        this.type = _type;
+        Debug.Log("type: " + type);
+    }
 
 }

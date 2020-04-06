@@ -13,13 +13,13 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-  private Card card {get; }; // Associated Card for Unit
-  private Player player {get; }; // Associated Player for Unit
-  private Tile tile {get; private set;}; // Associated Tile the Unit is placed on
+  private Card card { get; set; } // Associated Card for Unit
+  private Player player { get; set; } // Associated Player for Unit
+  private Tile tile {get; set;} // Associated Tile the Unit is placed on
 
-  private int attack_stat {get; private set;}; // Attack Stat for Player/Card unit
-  private int defense_stat {get; private set;}; // Defense Stat for Player/Card unit
-  private int hp_stat {get; private set;}; // HP Stat for Player units
+  private int attack_stat {get; set;} // Attack Stat for Player/Card unit
+  private int defense_stat {get; set;} // Defense Stat for Player/Card unit
+  private int hp_stat {get; set;} // HP Stat for Player units
 
   // Constructor for the Card Unit
   public Unit(Card card, Tile tile) {
@@ -42,7 +42,7 @@ public class Unit : MonoBehaviour
     return player != null;
   }
 
-  public IsCardUnit() {
+  public bool IsCardUnit() {
     return card != null;
   }
 }
