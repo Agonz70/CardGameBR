@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7797724e483a2e49bb91723e0a77d30, type: 3}
+  m_Name: Game SH
+  m_EditorClassIdentifier: 
+  Main: {fileID: 11400000, guid: 9cf4d4a2f5661fd4c97f1dbf8804bf73, type: 2}
+  CardSelect: {fileID: 11400000, guid: ab53f623e1efe7b4fa505a44a10e51a6, type: 2}
+  Movement: {fileID: 11400000, guid: c5e8983e86069de4497d33007ffb7ab6, type: 2}
+  CombatIntro: {fileID: 11400000, guid: 94c92b8635684d9429a5b334ebbdd43b, type: 2}
+  Combat: {fileID: 11400000, guid: acbd676b1034c2d4e98f4340fd91e33f, type: 2}
+  CombatOutro: {fileID: 11400000, guid: 5f6de523ece33f649a1bd3fef9d401dd, type: 2}
+  EnemyMain: {fileID: 11400000, guid: 2fe064d7b1d77e240909c0198f80d6d1, type: 2}
+  Summon: {fileID: 11400000, guid: 7780749b247e4894db4962c05cc7fd84, type: 2}
+  HandPick: {fileID: 11400000, guid: 312b08b15c1d13140beace204ad4c02e, type: 2}
+  EndTurn: {fileID: 11400000, guid: 1823b7909d02cc7459b78fc6751a8a3e, type: 2}
+  Fusion: {fileID: 11400000, guid: 02572f885b309ab49884b380b879b06c, type: 2}
