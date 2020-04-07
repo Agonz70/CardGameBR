@@ -9,11 +9,10 @@ public class GameTile : MonoBehaviour
     public int yPos { get; private set; }
 
     public Card card { get; private set; }
+    public int cardCurrentHP { get; private set; }
     public Player player { get; private set; }
     public bool tileOccupied { get; private set; }
     public bool faceDown { get; private set; }
-
-    public int cardCurrentHP { get; private set; }
     public int owner { get; private set; }
     
     public int type { get; private set; }
@@ -27,8 +26,19 @@ public class GameTile : MonoBehaviour
                     bool _tileOccupied = false, bool _faceDown = true, int _owner = 0, int _type = 0)
     {
         // set this.xPos and this.yPos given board _xPos and _yPos
+        this.xPos = _xPos;
+        this.yPos = _yPos;
         // set default parameters _card, _player, _tileOccupied, _faceDown, _owner
+        this.card = _card;
+        this.player = _player;
+        this.tileOccupied = _tileOccupied;
+        this.faceDown = _faceDown;
+        this.owner = _owner;
         // set default terrainObject given type and terrainPrefabs
+        this.type = _type;
+        this.terrainObject = terrainPrefabs[_type];
+        // set terrainObject name given this.xPos and this.yPos
+        this.terrainObject.name = this.xPos.ToString() + ", " + this.yPos.ToString();
     }
 
     // Print all values of tile data for debugging purposes
