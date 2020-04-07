@@ -5,8 +5,8 @@ using UnityEngine;
 public class GameTile : MonoBehaviour
 {
     #region Instance Variables
-    public int xPos { get; private set; }
-    public int yPos { get; private set; }
+    public float xPos { get; private set; }
+    public float yPos { get; private set; }
 
     public Card card { get; private set; }
     public int cardCurrentHP { get; private set; }
@@ -17,12 +17,12 @@ public class GameTile : MonoBehaviour
     
     public int type { get; private set; }
     public GameObject terrainObject { get; private set; }
-
-    [SerializeField] public GameObject[] terrainPrefabs;
+    public GameObject[] terrainPrefabs { get; set; }
     #endregion
 
-    // Tile Constructor for creating tiles via board script
-    public GameTile(int _xPos, int _yPos, Card _card = null, Player _player = null, 
+    #region Tile
+    /* Tile Constructor for creating tiles via board script */
+    public GameTile(float _xPos, float _yPos, Transform _board, GameObject[] _terrainPrefabs = null, Card _card = null, Player _player = null, 
                     bool _tileOccupied = false, bool _faceDown = true, int _owner = 0, int _type = 0)
     {
         // set this.xPos and this.yPos given board _xPos and _yPos
@@ -36,12 +36,13 @@ public class GameTile : MonoBehaviour
         this.owner = _owner;
         // set default terrainObject given type and terrainPrefabs
         this.type = _type;
-        this.terrainObject = terrainPrefabs[_type];
+        this.terrainPrefabs = _terrainPrefabs;
+        this.terrainObject = Instantiate(this.terrainPrefabs[_type], new Vector3(_xPos, _yPos, 0), Quaternion.identity, _board);
         // set terrainObject name given this.xPos and this.yPos
         this.terrainObject.name = this.xPos.ToString() + ", " + this.yPos.ToString();
     }
 
-    // Print all values of tile data for debugging purposes
+    /* Print all values of tile data for debugging purposes */
     public void PrintTileData()
     {
         Debug.Log("xPos & yPos: (" + xPos + ", " + yPos + ")");
@@ -53,8 +54,10 @@ public class GameTile : MonoBehaviour
         Debug.Log("type:" + type);
         Debug.Log("tileOccupied:" + tileOccupied);
     }
+    #endregion
 
     #region Setters
+    /* Set tile terrain type */
     public void SetType(int _type)
     {
         this.type = _type;
@@ -62,7 +65,7 @@ public class GameTile : MonoBehaviour
         Debug.Log("type changed for " + this.gameObject.name);
     }
 
-    // Adding card to tile
+    /* Adding card to tile */
     public void AddCard(Card _card)
     {
         if (!tileOccupied)
@@ -79,7 +82,7 @@ public class GameTile : MonoBehaviour
         }  
     }
 
-    // Removing card from tile
+    /* Removing card from tile */
     public void RemoveCard()
     {
         Debug.Log("card " + this.card + "being removed from " + this.gameObject.name);
@@ -88,7 +91,7 @@ public class GameTile : MonoBehaviour
         this.owner = 0;
     }
 
-    // Adding player to tile
+    /* Adding player to tile */
     public void AddPlayer(Player _player)
     {
         if (!tileOccupied)
@@ -104,7 +107,7 @@ public class GameTile : MonoBehaviour
         }
     }
 
-    // Removing player from tile
+    /* Removing player from tile */
     public void RemovePlayer()
     {
         Debug.Log("player " + this.player + "being removed from " + this.gameObject.name);
