@@ -4,29 +4,31 @@ using UnityEngine;
 
 public class GameTile : MonoBehaviour
 {
+    #region Instance Variables
     public int xPos { get; private set; }
     public int yPos { get; private set; }
+
     public Card card { get; private set; }
     public Player player { get; private set; }
+    public bool tileOccupied { get; private set; }
     public bool faceDown { get; private set; }
+
     public int cardCurrentHP { get; private set; }
     public int owner { get; private set; }
+    
     public int type { get; private set; }
     public GameObject terrainObject { get; private set; }
-    public bool occupied { get; private set; }
 
     [SerializeField] public GameObject[] terrainPrefabs;
+    #endregion
 
-    // Initialize tile data not set by board script 
-    public void InitiliazeTileData()
+    // Tile Constructor for creating tiles via board script
+    public GameTile(int _xPos, int _yPos, Card _card = null, Player _player = null, 
+                    bool _tileOccupied = false, bool _faceDown = true, int _owner = 0, int _type = 0)
     {
-        player = null; // no player
-        card = null; // no card
-        faceDown = true; // default card face down
-        owner = 0; // no owner
-        type = 0; // no type
-        terrainObject = terrainPrefabs[0]; // no type object
-        occupied = false; // no player or card
+        // set this.xPos and this.yPos given board _xPos and _yPos
+        // set default parameters _card, _player, _tileOccupied, _faceDown, _owner
+        // set default terrainObject given type and terrainPrefabs
     }
 
     // Print all values of tile data for debugging purposes
@@ -39,18 +41,10 @@ public class GameTile : MonoBehaviour
         Debug.Log("cardCurrentHp:" + cardCurrentHP);
         Debug.Log("owner" + owner);
         Debug.Log("type:" + type);
-        Debug.Log("occupied:" + occupied);
+        Debug.Log("tileOccupied:" + tileOccupied);
     }
 
-    // TODO edit this method
-    // Instantiate tiles done by board script
-    public static GameObject InstantiateTile(GameObject prefab, Vector3 worldPosition, Transform board)
-    {
-        GameObject tile = Instantiate(prefab, worldPosition, Quaternion.identity, board);
-        tile.name = worldPosition.x + ", " + worldPosition.y;
-        return tile;
-    }
-
+    #region Setters
     public void SetType(int _type)
     {
         this.type = _type;
@@ -58,11 +52,56 @@ public class GameTile : MonoBehaviour
         Debug.Log("type changed for " + this.gameObject.name);
     }
 
-    public void SetCard(Card _card)
+    // Adding card to tile
+    public void AddCard(Card _card)
     {
-        this.card = _card;
-        this.occupied = true;
+        if (!tileOccupied)
+        {
+            Debug.Log("card " + _card + "being added to " + this.gameObject.name);
+            this.card = _card;
+            this.tileOccupied = true;
+            //this.owner = _card.owner;
+            //this.cardCurrentHP = _card.hp;
+        }
+        else
+        {
+            Debug.Log("tile " + this.gameObject.name + " is already occupied by " + this.owner);
+        }  
     }
 
+    // Removing card from tile
+    public void RemoveCard()
+    {
+        Debug.Log("card " + this.card + "being removed from " + this.gameObject.name);
+        this.card = null;
+        this.tileOccupied = false;
+        this.owner = 0;
+    }
+
+    // Adding player to tile
+    public void AddPlayer(Player _player)
+    {
+        if (!tileOccupied)
+        {
+            Debug.Log("player " + _player + "being added to " + this.gameObject.name);
+            this.player = _player;
+            this.tileOccupied = true;
+            //this.owner = _player.owner;
+        }
+        else
+        {
+            Debug.Log("tile " + this.gameObject.name + " is already occupied by " + this.owner);
+        }
+    }
+
+    // Removing player from tile
+    public void RemovePlayer()
+    {
+        Debug.Log("player " + this.player + "being removed from " + this.gameObject.name);
+        this.player = null;
+        this.tileOccupied = false;
+        this.owner = 0;
+    }
+    #endregion
 }
 
