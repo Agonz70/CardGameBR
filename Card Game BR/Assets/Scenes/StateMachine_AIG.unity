@@ -424,6 +424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 837365960}
   - component: {fileID: 837365961}
+  - component: {fileID: 837365962}
   m_Layer: 0
   m_Name: BoardManager
   m_TagString: Untagged
@@ -454,16 +455,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 837365959}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ebfe596be9804f47b8b28aea099dfc6, type: 3}
+  m_Script: {fileID: 11500000, guid: 66f2faf5f72ff114da85282c62d4d6eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dimensions: {x: 20, y: 20}
-  padding: 0.02
-  prefab: {fileID: 500500819447861958, guid: db1005a6fe3e7df4daad4aecc6ab1f73, type: 3}
+  xDim: 4
+  yDim: 4
+  padding: 0.2
   board: {fileID: 1063986414}
-  setTileType: {x: 1, y: 1, z: 3}
-  letUsParty: 0
-  testingTileChanges: 0
+  terrainPrefabs:
+  - {fileID: 500500819447861958, guid: db1005a6fe3e7df4daad4aecc6ab1f73, type: 3}
+--- !u!114 &837365962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837365959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8513fda2e0e2d764eb70afab8a8ba997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1063986413
 GameObject:
   m_ObjectHideFlags: 0
