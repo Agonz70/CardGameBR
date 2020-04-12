@@ -15,7 +15,7 @@ public class GameBoard : MonoBehaviour
     #endregion
 
     #region Unity Events
-
+    // TODO remove Unity Start() from this script
     private void Start()
     {
         GenerateBoard();
