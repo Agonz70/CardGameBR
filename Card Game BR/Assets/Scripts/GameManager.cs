@@ -11,5 +11,17 @@ public class GameManager : MonoBehaviour
     private State currentState;
     private Card pickedCard;
     private Card targetCard;
+    private GameBoard board;
+
+    private void Start()
+    {
+        //board.GenerateBoard();
+    }
+
+    private void UpdateBoardTile(int _xPos, int _yPos, int _type)
+    {
+        Debug.Log("Updated tile[" + _xPos + ", " + _yPos + "] type to type[" + _type + "]");
+        board.tiles[_xPos, _yPos].SetType(_type);
+    }
 
 }

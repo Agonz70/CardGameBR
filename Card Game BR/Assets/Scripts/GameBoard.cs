@@ -34,7 +34,7 @@ public class GameBoard : MonoBehaviour
     }
 
     /* Generate a board of tiles that is a given x and y dimensions */
-    private void GenerateBoard()
+    public void GenerateBoard()
     {
         tiles = new GameTile[xDim, yDim];
 
