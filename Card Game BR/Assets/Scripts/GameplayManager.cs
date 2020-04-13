@@ -47,7 +47,7 @@ public bool phaseFinishedforNextState = false;
     // Update is called once per frame
     void Update()
     {
-        CurrentState.UpdateState(this);
+        //CurrentState.UpdateState(this);
     }
     
     public void TransitionToState(State nextState){
