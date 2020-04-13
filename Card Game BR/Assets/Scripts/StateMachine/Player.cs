@@ -8,8 +8,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-  private int attack_stat {get; };
-  private int defense_stat {get; };
-  private int hp_stat {get; };
-  private int mana_stat {get; };
+  public int attack_stat {get; }
+  public int defense_stat {get; }
+  public int hp_stat {get; }
+  private int mana_stat {get; }
 }

@@ -461,7 +461,9 @@ MonoBehaviour:
   padding: 0.02
   prefab: {fileID: 500500819447861958, guid: db1005a6fe3e7df4daad4aecc6ab1f73, type: 3}
   board: {fileID: 1063986414}
+  setTileType: {x: 1, y: 1, z: 3}
   letUsParty: 0
+  testingTileChanges: 0
 --- !u!1 &1063986413
 GameObject:
   m_ObjectHideFlags: 0
