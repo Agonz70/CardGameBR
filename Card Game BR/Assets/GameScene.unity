@@ -197,6 +197,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 445c0c71848569e4a84340a3c07ffb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  phaseFinishedforNextState: 0
+  CardEffectOver: 0
+  CurrentState: {fileID: 0}
 --- !u!4 &1843246663
 Transform:
   m_ObjectHideFlags: 0
@@ -282,6 +285,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cursor
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638871470734662045, guid: 62b90545c9a70c345a154eeb499585a1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62b90545c9a70c345a154eeb499585a1, type: 3}
