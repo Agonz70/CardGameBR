@@ -12,6 +12,7 @@ public class Card : ScriptableObject
     public int Attack;
     public int Type;
     public Effect effect;
-    Sprite CardPicture;
+    public bool HasEffect;
+    public Sprite CardPicture;
 
 }

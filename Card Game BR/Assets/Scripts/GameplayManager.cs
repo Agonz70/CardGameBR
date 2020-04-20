@@ -37,9 +37,14 @@ public bool phaseFinishedforNextState = false;
         Board.Instance.Initialize();
 
         Cursor.Instance.MovetoTile(0,0);
+
+        Board.Instance.GetTiles(4,0).PlaceCard(DebugCards[0], DebugCards[0].MaxHP,false, 0 );
+        Board.Instance.GetTiles(5,2).PlaceCard(DebugCards[1], DebugCards[1].MaxHP,false, 0 );
+        Board.Instance.GetTiles(2,3).PlaceCard(DebugCards[2], DebugCards[2].MaxHP,false, 0 );
         
     }
 
+    public Card[] DebugCards = new Card[3];
 
   
     

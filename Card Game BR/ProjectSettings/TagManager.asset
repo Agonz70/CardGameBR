@@ -44,6 +44,12 @@ TagManager:
   - name: Terrain
     uniqueID: 619178739
     locked: 0
+  - name: Card
+    uniqueID: 2274950809
+    locked: 0
+  - name: Highlight
+    uniqueID: 3795683155
+    locked: 0
   - name: Cursor
     uniqueID: 3891397345
     locked: 0
