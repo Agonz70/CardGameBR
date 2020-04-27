@@ -30,6 +30,9 @@ public class Cursor : MonoBehaviour
      float MoveAgainTimer;
      public float MaxMAT;
 
+     Tiles SelectedTile;
+     bool TileSelected;
+
      private void Update() {
          MoveAgainTimer+= Time.deltaTime;
          
@@ -53,10 +56,25 @@ public class Cursor : MonoBehaviour
          }
          }
 
-         if(Input.GetButtonDown("Confirm")){
-             if(Board.Instance.GetTiles(xpos,ypos).isCard !=null){
+         if(!CancelAllHighlights && Board.Instance.GetTiles(xpos,ypos).highlight.activeSelf == true  && Input.GetButtonDown("Confirm")){
+            Tiles TiletoGo = new Tiles();
+            TiletoGo = Board.Instance.GetTiles(xpos,ypos);
+            if(TiletoGo!= SelectedTile){
+            TiletoGo.PlaceCard(SelectedTile.isCard, SelectedTile.currentCardHP, SelectedTile.FacingUp, SelectedTile.Ownership);
+            SelectedTile.RemoveCard();
+            }
+           
 
-             
+            CancelAllHighlights = true;
+            
+
+         }
+
+         if(Input.GetButtonDown("Confirm") && TileSelected == false){
+             if(Board.Instance.GetTiles(xpos,ypos).isCard !=null){
+                 SelectedTile=Board.Instance.GetTiles(xpos,ypos);
+
+             TileSelected = true;
              CancelAllHighlights = false;
              
              HighlightTerrain(xpos+1,ypos);
@@ -68,6 +86,7 @@ public class Cursor : MonoBehaviour
          }
          if(Input.GetButtonDown("Cancel")){
              CancelAllHighlights = true;
+             TileSelected = false;
          }
 
          if(Input.GetButtonDown("Change Pos")){
@@ -75,15 +94,23 @@ public class Cursor : MonoBehaviour
              Board.Instance.GetTiles(xpos,ypos).ChangePos(!Board.Instance.GetTiles(xpos,ypos).FacingUp);
          }
 
+         if(CancelAllHighlights == true){
+              TileSelected = false;
+         }
+
          
      }
 
-     public bool CancelAllHighlights;
+     
+
+     public bool CancelAllHighlights =true;
 
      int xpos = 0;
     int ypos=0;
 
      public void MovetoTile(int x, int y){
+
+         if(x<0 || y<0 || x>8 || y>8) return;
         
 
          if( x<Board.Instance.xLength&& y<Board.Instance.yLength && x>=0 && y>=0){
@@ -104,6 +131,7 @@ public class Cursor : MonoBehaviour
      }
 
      public void HighlightTerrain(int x, int y){
+         if(x<0 || y<0 || x>8 || y>8) return;
         if(Board.Instance.GetTiles(x,y).isCard == null && Board.Instance.GetTiles(x,y).isPlayer == null){
             Board.Instance.GetTiles(x,y).highlight.SetActive(true);
             Board.Instance.GetTiles(x,y).Attack.SetActive(false);

@@ -2307,6 +2307,11 @@ PrefabInstance:
       propertyPath: CardInfo
       value: 
       objectReference: {fileID: 1852412501}
+    - target: {fileID: 7638871470332455290, guid: 62b90545c9a70c345a154eeb499585a1,
+        type: 3}
+      propertyPath: CancelAllHighlights
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7638871470332455291, guid: 62b90545c9a70c345a154eeb499585a1,
         type: 3}
       propertyPath: m_Name
