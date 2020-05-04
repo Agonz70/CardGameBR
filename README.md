@@ -1,6 +1,23 @@
 # CardGameBattleRoyale
 CSC 431 group creating card game battle royale
 
+# TO PLAY
+
+If you want to play this game, go to the build folder on the root of the program and click on the executable file the game is a WIP (Work In Progress) so the game is not complete, however, we hope that you find our progress satisfactory so far.
+
+# TO INSPECT SOURCE CODE
+
+To find the code files, go to the git>Assets>Scripts to find all the scripts, the Data and sprites are on their respective folders inside
+the assets folder. If you want to see the data in-depth, you have to install Unity and open the project using the Unity Editor 2019.2.15f1
+
+# Team Members
+-Giuseppe Cannavo
+-Andrew Gonzales
+-Salahuddin Bawaney
+-Michael Bowermaster
+-Michael Taylor
+-Renel Desir
+
 # Set-up Local version of Project
 1. Create Github Account [Join GitHub](https://github.com/join)
 2. Get added as an official collaborator of the project via email
